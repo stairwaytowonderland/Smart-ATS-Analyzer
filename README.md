@@ -1,6 +1,4 @@
-Here's a detailed setup guide formatted in Markdown for your Resume Application Tracking System (ATS) using Google Gemini Pro Vision LIM Model:
 
-```markdown
 # Resume Application Tracking System (ATS) Setup Guide
 
 ## Overview
@@ -85,4 +83,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 For any questions or issues, please contact Anubhav Raj at [anubhav0427@gmail.com](mailto:anubhav0427@gmail.com).
-```
+
