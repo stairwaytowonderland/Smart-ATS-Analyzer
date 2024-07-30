@@ -3,7 +3,7 @@ import google.generativeai as genai
 import os
 import PyPDF2 as pdf
 from dotenv import load_dotenv
-from fpdf import FPDF
+from fpdf import  FPDF
 
 # Load all environment variables
 load_dotenv()
