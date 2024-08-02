@@ -1,6 +1,6 @@
 
 # Resume Application Tracking System (ATS) Setup Guide
-![Image](path/to/image01.png)
+![Image](image01.png)
 **This App is Live - [Click here to access the Smart ATS Analyzer](https://smart-ats-analyzer-by-anubhav.streamlit.app/)**  
 ## Overview
 This guide will walk you through setting up the Resume Application Tracking System (ATS) on your PC. This system leverages the Google Gemini Pro Vision LIM Model to evaluate resumes against job descriptions and generate PDF reports.
