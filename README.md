@@ -1,12 +1,11 @@
 
 # Resume Application Tracking System (ATS) Setup Guide
-![Image](image01.png)
-**This App is Live - [Click here to access the Smart ATS Analyzer](https://smart-ats-analyzer-by-anubhav.streamlit.app/)**  
+
 ## Overview
 This guide will walk you through setting up the Resume Application Tracking System (ATS) on your PC. This system leverages the Google Gemini Pro Vision LIM Model to evaluate resumes against job descriptions and generate PDF reports.
 
 ## Prerequisites
-- Python 3.x installed on your PC
+- Python 3.x and Make installed on your PC
 - Basic knowledge of Python and Streamlit
 - Google API key for Google Gemini Pro Vision LIM Model
 
@@ -85,9 +84,5 @@ Open your web browser and go to `http://localhost:8501` to access the ATS applic
 - **API Key Issues**: Verify that your Google API key is correctly set up in the `.env` file and that it has the necessary permissions.
 - **File Upload Errors**: Ensure the file is a valid PDF and properly formatted.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-For any questions or issues, please contact Anubhav Raj at [anubhav0427@gmail.com](mailto:anubhav0427@gmail.com).
-
+# License 🪪
+[This project](https://github.com/stairwaytowonderland/Smart-ATS-Analyzer) © 2025 by [Andrew Haller](https://github.com/andrewhaller) is licensed under the [MIT License](https://opensource.org/license/mit). See the [LICENSE](LICENSE) file for details.
