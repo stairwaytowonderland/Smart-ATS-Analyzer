@@ -32,7 +32,7 @@ def save_response_as_pdf(response_text, file_path):
         def header(self):
             self.set_font('Arial', 'B', 12)
             self.cell(0, 10, 'ATS Evaluation', 0, 1, 'C')
-        
+
         def footer(self):
             self.set_y(-15)
             self.set_font('Arial', 'I', 8)
@@ -40,18 +40,22 @@ def save_response_as_pdf(response_text, file_path):
 
         def chapter_title(self, title):
             self.set_font('Arial', 'B', 12)
-            self.cell(0, 10, title, 0, 1, 'L')
+            clean_title = title.encode('latin-1', 'replace').decode('latin-1')
+            self.cell(0, 10, clean_title, 0, 1, 'L')
             self.ln(10)
 
         def chapter_body(self, body):
             self.set_font('Arial', '', 12)
-            self.multi_cell(0, 10, body)
+            clean_body = body.encode('latin-1', 'replace').decode('latin-1')
+            self.multi_cell(0, 10, clean_body)
             self.ln()
+
+    clean_response = response_text.encode('latin-1', 'replace').decode('latin-1')
 
     pdf = PDF()
     pdf.add_page()
     pdf.chapter_title('Evaluation')
-    pdf.chapter_body(response_text)
+    pdf.chapter_body(clean_response)
     pdf.output(file_path)
 
 # Prompt Templates
