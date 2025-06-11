@@ -24,8 +24,8 @@ cd <repository-directory>
 It's a good practice to use a virtual environment to manage dependencies.
 
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+python -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 ```
 
 ### 3. Install Required Libraries
@@ -39,13 +39,19 @@ pip install streamlit google-generativeai PyPDF2 fpdf python-dotenv
 Create a `.env` file in the project directory to store your Google API key.
 
 ```bash
-touch .env
+cp sample.env .env
 ```
 
 Add your Google API key to the `.env` file in the following format:
 
 ```
 GOOGLE_API_KEY=your_google_api_key_here
+```
+
+Optionally, modify the Generative Language API model:
+
+```
+GOOGLE_GENAI_MODEL=gemini-1.5-flash-002
 ```
 
 ### 5. Obtain Google API Key
