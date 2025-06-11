@@ -12,8 +12,9 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Function to get response from Gemini
-def get_gemini_response(input):
-    model = genai.GenerativeModel('gemini-pro')
+def get_gemini_response(input: str):
+    model_name = os.getenv("GOOGLE_GENAI_MODEL")
+    model = genai.GenerativeModel(model_name)
     response = model.generate_content(input)
     return response.text
 
