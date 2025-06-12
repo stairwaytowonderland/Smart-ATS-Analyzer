@@ -7,7 +7,7 @@ This guide will walk you through setting up the Resume Application Tracking Syst
 ## Prerequisites
 - Python 3.x and Make installed on your PC
 - Basic knowledge of Python and Streamlit
-- Google API key for Google Gemini Pro Vision LIM Model
+- Google API key for Google Generative Language API model
 
 ## Setup Steps
 
@@ -31,7 +31,7 @@ source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 Install the necessary Python libraries using `pip`.
 
 ```bash
-pip install streamlit google-generativeai PyPDF2 fpdf python-dotenv
+pip install -r requirements.txt
 ```
 
 ### 4. Set Up Environment Variables
