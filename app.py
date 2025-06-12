@@ -97,7 +97,7 @@ def save_response_as_pdf(response_text, file_path) -> None:
 
 
 # Prompt Templates
-input_prompt_template = """
+input_prompt1_template = """
 Act as a highly skilled and experienced Applicant Tracking System (ATS) with in-depth knowledge of the tech
 industry, including software engineering, data science, data analysis, big data engineering, and related fields.
 Your task is to evaluate the provided resume against the given job description.
@@ -127,7 +127,7 @@ Resume: {resume_text}
 Job Description: {job_description}
 """
 
-input_prompt1_template = """
+input_prompt2_template = """
 You are an experienced Technical Human Resource Manager with expertise in Data Science, Full Stack Development, Web Development, Big Data Engineering,
 DevOps, Data Analysis, UI/UX Design, and Product Management. Your task is to review the provided resume against the job description for these profiles.
 Responsibilities:
@@ -178,14 +178,14 @@ uploaded_file = st.file_uploader(
     help="Upload your resume in PDF of DOCX format for a thorough evaluation.",
 )
 
-submit = st.button("Check ATS Score")
-submit1 = st.button("Tell Me About the Resume")
+submit1 = st.button("Check ATS Score")
+submit2 = st.button("Tell Me About the Resume")
 submit3 = st.button("Percentage Match")
 
-if submit:
+if submit1:
     if uploaded_file is not None:
         resume_text = extract_text_from_file(uploaded_file)
-        input_prompt = input_prompt_template.format(
+        input_prompt = input_prompt1_template.format(
             resume_text=resume_text, job_description=job_description
         )
         response = get_gemini_response(input_prompt)
@@ -203,10 +203,10 @@ if submit:
     else:
         st.write("Please upload the resume.")
 
-elif submit1:
+elif submit2:
     if uploaded_file is not None:
         resume_text = extract_text_from_file(uploaded_file)
-        input_prompt1 = input_prompt1_template.format(
+        input_prompt1 = input_prompt2_template.format(
             resume_text=resume_text, job_description=job_description
         )
         response = get_gemini_response(input_prompt1)
