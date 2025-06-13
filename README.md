@@ -1,5 +1,5 @@
 # Resume Application Tracking System (ATS) Setup Guide
-![Image](image01.png)
+![Image](screenshot-dark.png)
 
 ## Overview
 This guide will walk you through setting up the Resume Application Tracking System (ATS) on your PC. This system leverages the Google Gemini Pro Vision LIM Model to evaluate resumes against job descriptions and generate PDF reports.
