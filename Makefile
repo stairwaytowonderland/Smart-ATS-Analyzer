@@ -63,15 +63,15 @@ lint: ## Run linters and reformat
 run: .streamlit_command ## Run the streamlit app
 	( \
   . .venv/bin/activate; \
-  printf "\n\033[1m%s\033[0m ...\n  \033[1;92m\`%s\`\033[0m\n\n" "Running the streamlit app" "streamlit run app.py"; \
-  streamlit run app.py; \
+  printf "\n\033[1m%s\033[0m ...\n  \033[1;92m\`%s\`\033[0m\n\n" "Running the streamlit app" "pushd src; streamlit run app.py; popd"; \
+  pushd src; streamlit run app.py; popd; \
 )
 
 .venv_reminder:
 	@printf "\n\t📝 \033[1m%s\033[0m: %s\n\t   %s\n\t   %s\n\t   %s.\n\n\t🏄 %s \033[1;92m\`%s\`\033[0m\n\t   %s.\n" "NOTE" "The dependencies are installed" "in a virtual environment which needs" "to be manually activated to run the" "Python command" "Please run" ". .venv/bin/activate" "to activate the virtual environment"
 
 .streamlit_command:
-	@printf "\n\033[1m%s\033[0m ...\n\t\033[1;92m\`%s\`\033[0m\n... or just use ...\n\t\033[1;92m\`%s\`\033[0m\n\n" "The streamlit command" "streamlit run app.py" "make run"
+	@printf "\n\033[1m%s\033[0m ...\n\t\033[1;92m\`%s\`\033[0m\n... or just use ...\n\t\033[1;92m\`%s\`\033[0m\n\n" "The streamlit command" "pushd src; streamlit run app.py; popd" "make run"
 
 .init:
 	@deactivate 2>/dev/null || true
@@ -85,25 +85,25 @@ run: .streamlit_command ## Run the streamlit app
 .install:
 	( \
   . .venv/bin/activate; \
-  pip install --no-cache-dir -r requirements.txt; \
+  pip install --no-cache-dir -r src/requirements.txt; \
 )
 
 .install-dev:
 	( \
   . .venv/bin/activate; \
-  pip install --no-cache-dir -r requirements-dev.txt; \
+  pip install --no-cache-dir -r src/requirements-dev.txt; \
   pre-commit install; \
 )
 
 .uninstall:
 	( \
   . .venv/bin/activate; \
-  pip uninstall -y -r requirements.txt; \
+  pip uninstall -y -r src/requirements.txt; \
 )
 
 .uninstall-dev:
 	( \
   . .venv/bin/activate; \
   pre-commit uninstall; \
-  pip uninstall -y -r requirements-dev.txt; \
+  pip uninstall -y -r src/requirements-dev.txt; \
 )
